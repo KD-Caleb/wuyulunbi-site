@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>无鱼伦比 · 线上应援站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --blue: #7BB8FF;
+            --mint: #B9F3F3;
+            --deep-blue: #2c5cff;
+            --bg: #f0f7ff;
+            --card-bg: #ffffff;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: #222;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--blue), var(--mint));
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header p.slogan {
+            margin: 12px 0 4px;
+            font-size: 1.25rem;
+            font-weight: 650;
+        }
+        header p.sub {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        nav {
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav a {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--deep-blue);
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #e6eeff;
+        }
+        nav a:hover { background: #d6e1ff; }
+
+        .container {
+            max-width: 980px;
+            margin: auto;
+            padding: 18px 16px 40px;
+        }
+        .section-title {
+            margin: 16px 0 10px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-left: 4px solid var(--blue);
+            padding-left: 8px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* 图片墙 */
+        .gallery {
+            column-count: 2;
+            column-gap: 10px;
+        }
+        @media (min-width: 800px) {
+            .gallery { column-count: 3; }
+        }
+        .gallery img {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            break-inside: avoid;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            cursor: pointer;
+        }
+
+        /* 视频显示 */
+        .video-card {
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* 按钮 */
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: var(--deep-blue);
+            color: white;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* 大图预览 */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.75);
+            z-index: 100;
+        }
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 92vh;
+            border-radius: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>无鱼伦比 · 线上应援站</h1>
+    <p class="slogan">无鱼伦比不设限，从校服到岁岁年年！</p>
+    <p class="sub">所有心动瞬间，都在这里被温柔收藏。</p>
+</header>
+
+<nav>
+    <a href="#photos">图片墙</a>
+    <a href="#videos">视频区</a>
+    <a href="#about">关于他们</a>
+    <a href="#submit">粉丝投稿</a>
+</nav>
+
+<div class="container">
+
+    <section id="photos">
+        <div class="section-title">📸 图片墙 Photos</div>
+        <div class="gallery">
+            <img src="https://placekitten.com/600/800">
+            <img src="https://placekitten.com/650/900">
+            <img src="https://placekitten.com/640/780">
+            <img src="https://placekitten.com/620/750">
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="section-title">🎬 视频区 Videos</div>
+
+        <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/视频ID"></iframe>
+        </div>
+
+        <div class="video-card">
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1xxxxxx"></iframe>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <div class="section-title">💙 关于无鱼伦比</div>
+        <div class="card">
+            <p>「无鱼伦比」是粉丝对这对 CP 的昵称，像海与鱼那样，天生属于彼此的故事。</p>
+            <p>从校服到成年，从青涩到成熟，他们的每一个瞬间，都是粉丝心中的光。</p>
+        </div>
+    </section>
+
+    <section id="submit">
+        <div class="section-title">📮 粉丝投稿 Submit</div>
+        <div class="card">
+            <p>你可以投稿图片 / 视频链接 / 文案：</p>
+            <a class="btn" href="https://docs.google.com/forms/d/你的表单ID" target="_blank">点这里投稿</a>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+                投稿将由管理员审核后展示。
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    本站为粉丝自发应援，与艺人及公司无关 · 无商业用途  
+</footer>
+
+<div class="lightbox" id="lightbox">
+    <img src="">
+</div>
+
+<script>
+    const box = document.getElementById("lightbox");
+    const boxImg = box.querySelector("img");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+        img.addEventListener("click", () => {
+            boxImg.src = img.src;
+            box.style.display = "flex";
+        });
+    });
+
+    box.addEventListener("click", () => {
+        box.style.display = "none";
+        boxImg.src = "";
+    });
+</script>
+
+</body>
+</html>
+
